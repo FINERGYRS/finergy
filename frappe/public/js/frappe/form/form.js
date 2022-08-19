@@ -311,10 +311,16 @@ frappe.ui.form.Form = class FrappeForm {
 			this.doc = frappe.get_doc(this.doctype, this.docname);
 
 			// check permissions
+			this.fetch_permissions();
 			if (!this.has_read_permission()) {
 				frappe.show_not_permitted(__(this.doctype) + " " + __(this.docname));
 				return;
 			}
+
+			// update grids with new permissions
+			this.grids.forEach((table) => {
+				table.grid.refresh();
+			});
 
 			// read only (workflow)
 			this.read_only = frappe.workflow.is_read_only(this.doctype, this.docname);
@@ -993,12 +999,17 @@ frappe.ui.form.Form = class FrappeForm {
 			function() {}).attr("href", path || this.doc.route).attr("target", "_blank");
 	}
 
-	has_read_permission() {
-		// get perm
-		var dt = this.parent_doctype ? this.parent_doctype : this.doctype;
+	fetch_permissions() {
+		let dt = this.parent_doctype ? this.parent_doctype : this.doctype;
 		this.perm = frappe.perm.get_perm(dt, this.doc);
+	}
 
+<<<<<<< HEAD
 		if(!this.perm[0].read) {
+=======
+	has_read_permission() {
+		if (!this.perm[0].read) {
+>>>>>>> 80d264a7b4 (fix: permissions dont refresh when switching doc)
 			return 0;
 		}
 		return 1;
