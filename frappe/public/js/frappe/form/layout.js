@@ -136,9 +136,6 @@ frappe.ui.form.Layout = Class.extend({
 			this.fields_dict[fieldname].$wrapper.remove();
 			this.fields_list.splice(this.fields_dict[fieldname], 1, fieldobj);
 			this.fields_dict[fieldname] = fieldobj;
-			if (this.frm) {
-				fieldobj.perm = this.frm.perm;
-			}
 			this.section.fields_list.splice(this.section.fields_dict[fieldname], 1, fieldobj);
 			this.section.fields_dict[fieldname] = fieldobj;
 			this.refresh_fields([df]);
@@ -152,9 +149,6 @@ frappe.ui.form.Layout = Class.extend({
 		const fieldobj = this.init_field(df, render);
 		this.fields_list.push(fieldobj);
 		this.fields_dict[df.fieldname] = fieldobj;
-		if (this.frm) {
-			fieldobj.perm = this.frm.perm;
-		}
 
 		this.section.fields_list.push(fieldobj);
 		this.section.fields_dict[df.fieldname] = fieldobj;
@@ -327,6 +321,7 @@ frappe.ui.form.Layout = Class.extend({
 				fieldobj.doc = me.doc;
 				fieldobj.doctype = me.doc.doctype;
 				fieldobj.docname = me.doc.name;
+<<<<<<< HEAD
 				fieldobj.df = frappe.meta.get_docfield(me.doc.doctype,
 					fieldobj.df.fieldname, me.doc.name) || fieldobj.df;
 
@@ -334,6 +329,11 @@ frappe.ui.form.Layout = Class.extend({
 				if (me.frm) {
 					fieldobj.perm = me.frm.perm;
 				}
+=======
+				fieldobj.df =
+					frappe.meta.get_docfield(me.doc.doctype, fieldobj.df.fieldname, me.doc.name) ||
+					fieldobj.df;
+>>>>>>> 722d57637f (refactor: convert control.perm to a property)
 			}
 			refresh && fieldobj.df && fieldobj.refresh && fieldobj.refresh();
 		}
