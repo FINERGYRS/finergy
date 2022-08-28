@@ -2,8 +2,8 @@ context('List View', () => {
 	before(() => {
 		cy.login();
 		cy.visit('/app/website');
-		return cy.window().its('frappe').then(frappe => {
-			return frappe.xcall("frappe.tests.ui_test_helpers.setup_workflow");
+		return cy.window().its('finergy').then(finergy => {
+			return finergy.xcall("finergy.tests.ui_test_helpers.setup_workflow");
 		});
 	});
 
@@ -32,11 +32,11 @@ context('List View', () => {
 		}).then((elements) => {
 			cy.intercept({
 				method: 'POST',
-				url: 'api/method/frappe.model.workflow.bulk_workflow_approval'
+				url: 'api/method/finergy.model.workflow.bulk_workflow_approval'
 			}).as('bulk-approval');
 			cy.intercept({
 				method: 'POST',
-				url: 'api/method/frappe.desk.reportview.get'
+				url: 'api/method/finergy.desk.reportview.get'
 			}).as('real-time-update');
 			cy.wrap(elements).contains('Approve').click();
 			cy.wait(['@bulk-approval', '@real-time-update']);

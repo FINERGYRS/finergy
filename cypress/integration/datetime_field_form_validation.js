@@ -5,8 +5,8 @@
 // 	before(() => {
 // 		cy.login();
 // 		cy.visit('/app/communication');
-// 		cy.window().its('frappe').then(frappe => {
-// 			frappe.call("frappe.tests.ui_test_helpers.create_communication_records");
+// 		cy.window().its('finergy').then(finergy => {
+// 			finergy.call("finergy.tests.ui_test_helpers.create_communication_records");
 // 		});
 // 	});
 

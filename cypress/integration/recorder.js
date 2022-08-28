@@ -5,10 +5,10 @@ context('Recorder', () => {
 
 	beforeEach(() => {
 		cy.visit('/app/recorder');
-		return cy.window().its('frappe').then(frappe => {
+		return cy.window().its('finergy').then(finergy => {
 			// reset recorder
-			return frappe.xcall("frappe.recorder.stop").then(() => {
-				return frappe.xcall("frappe.recorder.delete");
+			return finergy.xcall("finergy.recorder.stop").then(() => {
+				return finergy.xcall("finergy.recorder.delete");
 			});
 		});
 	});
@@ -32,7 +32,7 @@ context('Recorder', () => {
 		cy.get('.msg-box').should('contain', 'No Requests found');
 
 		cy.visit('/app/List/DocType/List');
-		cy.intercept('POST', '/api/method/frappe.desk.reportview.get').as('list_refresh');
+		cy.intercept('POST', '/api/method/finergy.desk.reportview.get').as('list_refresh');
 		cy.wait('@list_refresh');
 
 		cy.get('.page-head').findByTitle('DocType').should('exist');
@@ -40,14 +40,14 @@ context('Recorder', () => {
 
 		cy.visit('/app/recorder');
 		cy.get('.page-head').findByTitle('Recorder').should('exist');
-		cy.get('.frappe-list .result-list').should('contain', '/api/method/frappe.desk.reportview.get');
+		cy.get('.finergy-list .result-list').should('contain', '/api/method/finergy.desk.reportview.get');
 	});
 
 	it('Recorder View Request', () => {
 		cy.get('.page-actions').findByRole('button', {name: 'Start'}).click();
 
 		cy.visit('/app/List/DocType/List');
-		cy.intercept('POST', '/api/method/frappe.desk.reportview.get').as('list_refresh');
+		cy.intercept('POST', '/api/method/finergy.desk.reportview.get').as('list_refresh');
 		cy.wait('@list_refresh');
 
 		cy.get('.page-head').findByTitle('DocType').should('exist');
@@ -55,12 +55,12 @@ context('Recorder', () => {
 
 		cy.visit('/app/recorder');
 
-		cy.get('.frappe-list .list-row-container span')
-			.contains('/api/method/frappe')
+		cy.get('.finergy-list .list-row-container span')
+			.contains('/api/method/finergy')
 			.should('be.visible')
 			.click({force: true});
 
 		cy.url().should('include', '/recorder/request');
-		cy.get('form').should('contain', '/api/method/frappe');
+		cy.get('form').should('contain', '/api/method/finergy');
 	});
 });

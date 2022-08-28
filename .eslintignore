@@ -1,8 +1,8 @@
-frappe/public/js/lib/*
-frappe/public/js/frappe/misc/tests/*
-frappe/public/js/frappe/views/test_runner.js
-frappe/core/doctype/doctype/boilerplate/*
-frappe/core/doctype/report/boilerplate/*
-frappe/public/js/frappe/class.js
-frappe/templates/includes/*
-frappe/www/website_script.js
+finergy/public/js/lib/*
+finergy/public/js/finergyrs/misc/tests/*
+finergy/public/js/finergyrs/views/test_runner.js
+finergy/core/doctype/doctype/boilerplate/*
+finergy/core/doctype/report/boilerplate/*
+finergy/public/js/finergyrs/class.js
+finergy/templates/includes/*
+finergy/www/website_script.js

@@ -1,25 +1,25 @@
 {
-  "name": "frappe-framework",
+  "name": "finergy-framework",
   "scripts": {
     "build": "node rollup/build.js",
-    "production": "FRAPPE_ENV=production node rollup/build.js",
+    "production": "FINERGY_ENV=production node rollup/build.js",
     "watch": "node rollup/watch.js",
     "snyk-protect": "snyk protect",
     "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frappe/frappe.git"
+    "url": "git+https://github.com/finergyrs/finergy.git"
   },
-  "author": "Frappe Technologies Pvt. Ltd.",
+  "author": "Finergy Reporting Solutions SAS",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/frappe/frappe/issues"
+    "url": "https://github.com/finergyrs/finergy/issues"
   },
-  "homepage": "https://frappeframework.com",
+  "homepage": "https://finergy-rs.fr",
   "dependencies": {
     "ace-builds": "^1.4.8",
-    "air-datepicker": "github:frappe/air-datepicker",
+    "air-datepicker": "github:finergyrs/air-datepicker",
     "autoprefixer": "^9.8.6",
     "awesomplete": "^1.1.5",
     "bootstrap": "4",
@@ -28,9 +28,9 @@
     "driver.js": "^0.9.8",
     "express": "^4.17.1",
     "fast-deep-equal": "^2.0.1",
-    "frappe-charts": "^2.0.0-rc13",
-    "frappe-datatable": "^1.16.4",
-    "frappe-gantt": "^0.6.0",
+    "finergy-charts": "^2.0.0-rc13",
+    "finergy-datatable": "^1.16.4",
+    "finergy-gantt": "^0.6.0",
     "fuse.js": "^3.4.6",
     "highlight.js": "^10.4.1",
     "html5-qrcode": "^2.0.11",

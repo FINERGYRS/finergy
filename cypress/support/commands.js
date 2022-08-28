@@ -46,7 +46,7 @@ Cypress.Commands.add('login', (email, password) => {
 Cypress.Commands.add('call', (method, args) => {
 	return cy
 		.window()
-		.its('frappe.csrf_token')
+		.its('finergy.csrf_token')
 		.then(csrf_token => {
 			return cy
 				.request({
@@ -56,7 +56,7 @@ Cypress.Commands.add('call', (method, args) => {
 					headers: {
 						Accept: 'application/json',
 						'Content-Type': 'application/json',
-						'X-Frappe-CSRF-Token': csrf_token
+						'X-Finergy-CSRF-Token': csrf_token
 					}
 				})
 				.then(res => {
@@ -72,7 +72,7 @@ Cypress.Commands.add('get_list', (doctype, fields = [], filters = []) => {
 	let url = `/api/resource/${doctype}?fields=${fields}&filters=${filters}`;
 	return cy
 		.window()
-		.its('frappe.csrf_token')
+		.its('finergy.csrf_token')
 		.then(csrf_token => {
 			return cy
 				.request({
@@ -80,7 +80,7 @@ Cypress.Commands.add('get_list', (doctype, fields = [], filters = []) => {
 					url,
 					headers: {
 						Accept: 'application/json',
-						'X-Frappe-CSRF-Token': csrf_token
+						'X-Finergy-CSRF-Token': csrf_token
 					}
 				})
 				.then(res => {
@@ -93,7 +93,7 @@ Cypress.Commands.add('get_list', (doctype, fields = [], filters = []) => {
 Cypress.Commands.add('get_doc', (doctype, name) => {
 	return cy
 		.window()
-		.its('frappe.csrf_token')
+		.its('finergy.csrf_token')
 		.then(csrf_token => {
 			return cy
 				.request({
@@ -101,7 +101,7 @@ Cypress.Commands.add('get_doc', (doctype, name) => {
 					url: `/api/resource/${doctype}/${name}`,
 					headers: {
 						Accept: 'application/json',
-						'X-Frappe-CSRF-Token': csrf_token
+						'X-Finergy-CSRF-Token': csrf_token
 					}
 				})
 				.then(res => {
@@ -114,7 +114,7 @@ Cypress.Commands.add('get_doc', (doctype, name) => {
 Cypress.Commands.add('remove_doc', (doctype, name) => {
 	return cy
 		.window()
-		.its('frappe.csrf_token')
+		.its('finergy.csrf_token')
 		.then(csrf_token => {
 			return cy
 				.request({
@@ -122,7 +122,7 @@ Cypress.Commands.add('remove_doc', (doctype, name) => {
 					url: `/api/resource/${doctype}/${name}`,
 					headers: {
 						Accept: 'application/json',
-						'X-Frappe-CSRF-Token': csrf_token
+						'X-Finergy-CSRF-Token': csrf_token
 					}
 				})
 				.then(res => {
@@ -134,12 +134,12 @@ Cypress.Commands.add('remove_doc', (doctype, name) => {
 
 Cypress.Commands.add('create_records', doc => {
 	return cy
-		.call('frappe.tests.ui_test_helpers.create_if_not_exists', {doc})
+		.call('finergy.tests.ui_test_helpers.create_if_not_exists', {doc})
 		.then(r => r.message);
 });
 
 Cypress.Commands.add('set_value', (doctype, name, obj) => {
-	return cy.call('frappe.client.set_value', {
+	return cy.call('finergy.client.set_value', {
 		doctype,
 		name,
 		fieldname: obj
@@ -199,7 +199,7 @@ Cypress.Commands.add('fill_table_field', (tablefieldname, row_idx, fieldname, va
 });
 
 Cypress.Commands.add('get_table_field', (tablefieldname, row_idx, fieldname, fieldtype = 'Data') => {
-	let selector = `.frappe-control[data-fieldname="${tablefieldname}"]`;
+	let selector = `.finergy-control[data-fieldname="${tablefieldname}"]`;
 	selector += ` [data-idx="${row_idx}"]`;
 	selector += ` .form-in-grid`;
 
@@ -232,15 +232,15 @@ Cypress.Commands.add('go_to_list', doctype => {
 
 Cypress.Commands.add('clear_cache', () => {
 	cy.window()
-		.its('frappe')
-		.then(frappe => {
-			frappe.ui.toolbar.clear_cache();
+		.its('finergy')
+		.then(finergy => {
+			finergy.ui.toolbar.clear_cache();
 		});
 });
 
 Cypress.Commands.add('dialog', opts => {
 	return cy.window().then(win => {
-		var d = new win.frappe.ui.Dialog(opts);
+		var d = new win.finergy.ui.Dialog(opts);
 		d.show();
 		return d;
 	});
@@ -259,7 +259,7 @@ Cypress.Commands.add('hide_dialog', () => {
 Cypress.Commands.add('insert_doc', (doctype, args, ignore_duplicate) => {
 	return cy
 		.window()
-		.its('frappe.csrf_token')
+		.its('finergy.csrf_token')
 		.then(csrf_token => {
 			return cy
 				.request({
@@ -269,7 +269,7 @@ Cypress.Commands.add('insert_doc', (doctype, args, ignore_duplicate) => {
 					headers: {
 						Accept: 'application/json',
 						'Content-Type': 'application/json',
-						'X-Frappe-CSRF-Token': csrf_token
+						'X-Finergy-CSRF-Token': csrf_token
 					},
 					failOnStatusCode: !ignore_duplicate
 				})
@@ -294,7 +294,7 @@ Cypress.Commands.add('clear_filters', () => {
 	let has_filter = false;
 	cy.intercept({
 		method: 'POST',
-		url: 'api/method/frappe.model.utils.user_settings.save'
+		url: 'api/method/finergy.model.utils.user_settings.save'
 	}).as('filter-saved');
 	cy.get('.filter-section .filter-button').click({force: true});
 	cy.wait(300);
@@ -344,5 +344,5 @@ Cypress.Commands.add('click_timeline_action_btn', (btn_name) => {
 });
 
 Cypress.Commands.add('select_listview_row_checkbox', (row_no) => {
-	cy.get('.frappe-list .select-like > .list-row-checkbox').eq(row_no).click();
+	cy.get('.finergy-list .select-like > .list-row-checkbox').eq(row_no).click();
 });

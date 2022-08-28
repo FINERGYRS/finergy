@@ -1,0 +1,1 @@
+Core module contains the models required for the basic functioning of finergy including DocType, User (user), Role and others.

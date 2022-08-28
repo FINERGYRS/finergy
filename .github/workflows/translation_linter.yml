@@ -1,4 +1,4 @@
-name: Frappe Linter
+name: Finergy Linter
 on:
   pull_request:
     branches:
