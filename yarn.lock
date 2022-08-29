@@ -2545,10 +2545,11 @@ finergy-datatable@^1.16.4:
     lodash "^4.17.5"
     sortablejs "^1.7.0"
 
-finergy-gantt@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/finergy-gantt/-/finergy-gantt-0.6.0.tgz#fece2fdecc0b8d6065d3c420d9681b719b827047"
-  integrity sha512-/P7s9edP6EoLD09EX2HPqsy1u0v4zYcurMy4ByExArvj7t0UDJlpxp88nISFtMkQe+aofaO9dR0fd61ZwX0O6g==
+"finergy-gantt@github:finergyrs/gantt":
+  version "0.6.1.1"
+  resolved "https://codeload.github.com/FINERGYRS/gantt/tar.gz/b4221b767d24454b5ee0646d55ce7c34dd94af85"
+  dependencies:
+    jquery ">=2.0.0 <4.0.0"
 
 fresh@0.5.2:
   version "0.5.2"
