@@ -2539,7 +2539,7 @@ finergy-charts@^2.0.0-rc13:
 finergy-datatable@^1.16.4:
   version "1.16.4"
   resolved "https://registry.yarnpkg.com/finergy-datatable/-/finergy-datatable-1.16.4.tgz#cb26f197c3cd404a5b13f016ef81c394e06f56fe"
-  integrity sha512-VoiTLnkuObMa3FxITrvP32UYN9v4WQ0j4qlCiDuqdXha9/BVSxwDt2BTK+cvaRloGcds5G2Hm9IRbltRRGGhxA==
+  integrity sha512-0iYoNRCVawjzwqQ/LAjekQeKteRB47J/g6gdV9SJsHrJIDBpZYjZnxOzoxvQxoBXB6iLIv7H7BIAvsYMpsumwg==
   dependencies:
     hyperlist "^1.0.0-beta"
     lodash "^4.17.5"
