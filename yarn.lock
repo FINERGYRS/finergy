@@ -2534,7 +2534,7 @@ fragment-cache@^0.2.1:
 finergy-charts@^2.0.0-rc13:
   version "2.0.0-rc13"
   resolved "https://registry.yarnpkg.com/finergy-charts/-/finergy-charts-2.0.0-rc13.tgz#fdb251d7ae311c41e38f90a3ae108070ec6b9072"
-  integrity sha512-Bv7IfllIrjRbKWHn5b769dOSenqdBixAr6m5kurf8ZUOJSLOgK4HOXItJ7BA8n9PvviH9/k5DaloisjLM2Bm1w==
+  integrity sha512-T3AKUcQW9kICSIL7S93rHlZElLZa9a4Wx+sl/n3b8ZntwvWNQuAVl7h3h1H+RDgX7IK+J664axq+pku/XBirmw==
 
 finergy-datatable@^1.16.4:
   version "1.16.4"
