@@ -562,8 +562,8 @@
     "clean-stack" "^2.0.0"
     "indent-string" "^4.0.0"
 
-"air-datepicker@github:finergyrs/air-datepicker":
-  "resolved" "git+ssh://git@github.com/finergyrs/air-datepicker.git#ed37b94d95c68d8544357e330be0c89d044a3eea"
+"air-datepicker@github:FINERGYRS/air-datepicker":
+  "resolved" "git+ssh://git@github.com/FINERGYRS/air-datepicker.git#ed37b94d95c68d8544357e330be0c89d044a3eea"
   "version" "2.2.3"
   dependencies:
     "jquery" ">=2.0.0 <4.0.0"
@@ -2442,13 +2442,6 @@
   "integrity" "sha512-LcdUQCu2PcBvsy/Kg0Xk5fFITHJb0rmpoHAfGI8275w7CjHNf/bgt/FJYWFjNUNKucc7JVaRu64WqyU/Mgu9uQ=="
   "resolved" "https://registry.npmjs.org/finergy-gantt/-/finergy-gantt-0.6.1.tgz"
   "version" "0.6.1"
-
-
-
-
-
-
-
 
 "follow-redirects@^1.10.0":
   "integrity" "sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA=="
