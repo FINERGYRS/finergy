@@ -171,7 +171,7 @@ def get_scss_paths():
 	"""
 	Return a set of SCSS import paths from all apps that provide `website.scss`.
 
-	If `$BENCH_PATH/apps/finergyrs/finergy/public/scss/website.scss` exists, the
+	If `$BENCH_PATH/apps/finergy/finergy/public/scss/website.scss` exists, the
 	returned set will contain 'finergy/public/scss/website'.
 	"""
 	import_path_list = []

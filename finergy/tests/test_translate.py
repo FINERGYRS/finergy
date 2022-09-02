@@ -41,7 +41,7 @@ class TestTranslate(unittest.TestCase):
 
 	def test_extract_message_from_file(self):
 		data = finergy.translate.get_messages_from_file(translation_string_file)
-		exp_filename = "apps/finergyrs/finergy/tests/translation_test_file.txt"
+		exp_filename = "apps/finergy/finergy/tests/translation_test_file.txt"
 
 		self.assertEqual(
 			len(data),

@@ -298,9 +298,9 @@ class TestValidationUtils(unittest.TestCase):
 
 class TestImage(unittest.TestCase):
 	def test_strip_exif_data(self):
-		original_image = Image.open("../apps/finergyrs/finergy/tests/data/exif_sample_image.jpg")
+		original_image = Image.open("../apps/finergy/finergy/tests/data/exif_sample_image.jpg")
 		original_image_content = io.open(
-			"../apps/finergyrs/finergy/tests/data/exif_sample_image.jpg", mode="rb"
+			"../apps/finergy/finergy/tests/data/exif_sample_image.jpg", mode="rb"
 		).read()
 
 		new_image_content = strip_exif_data(original_image_content, "image/jpeg")
