@@ -562,11 +562,12 @@
     "clean-stack" "^2.0.0"
     "indent-string" "^4.0.0"
 
-"air-datepicker@github:FINERGYRS/air-datepicker":
-  "resolved" "git+ssh://git@github.com/FINERGYRS/air-datepicker.git#ed37b94d95c68d8544357e330be0c89d044a3eea"
+"air-datepicker@github:finergyrs/air-datepicker":
+  "resolved" "https://github.com/FINERGYRS/air-datepicker/archive/refs/tags/v2.2.3.1.tar.gz"
   "version" "2.2.3"
   dependencies:
     "jquery" ">=2.0.0 <4.0.0"
+
 
 "ajv@^6.12.3":
   "integrity" "sha512-lRF8RORchjpKG50/WFf8xmg7sgCLFiYNNnqdKflk63whMQcWR5ngGjiSXkL9bjxy6B2npOK2HSMN49jEBMSkag=="
